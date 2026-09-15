@@ -26,6 +26,8 @@ def data():
             diction[num] = 1
     return diction, listy
 
+########################################################################################################################
+
 def printList(listy):
     print(listy)
 
@@ -43,6 +45,7 @@ def problemOne():
         print(f"List print time: {time_list} seconds")
         print(f"Dictionary print time: {time_dict} seconds")
 
+########################################################################################################################
 
 def findList(listy, target):
     return target in listy
@@ -63,6 +66,7 @@ def problemTwo():
         print(f"List find time: {time_list} seconds")
         print(f"Dictionary find time: {time_dict} seconds")
 
+########################################################################################################################
 
 def insertList(listy, target):
     listy.append(target)
@@ -106,6 +110,8 @@ def problemFour():
 
         print(f"List delete time: {time_list} seconds")
         print(f"Dictionary delete time: {time_dict} seconds")
+
+
 
 problemOne()
 problemTwo()
