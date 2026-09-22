@@ -1,7 +1,6 @@
 """CMPSC 462 - Lab 3: Stack and Queue"""
 from collections import deque
 
-
 # ---------------------------------------------------------------
 # Basic Stack and Queue classes (stand-ins for the ones from class)
 # ---------------------------------------------------------------
@@ -85,12 +84,6 @@ class QueueTwoStacks:
             raise IndexError("dequeue from empty queue")
         return self.out_stack.pop()
 
-    def front(self):
-        self._shift()
-        if self.out_stack.is_empty():
-            raise IndexError("front of empty queue")
-        return self.out_stack.peek()
-
     def is_empty(self):
         return self.in_stack.is_empty() and self.out_stack.is_empty()
 
@@ -98,25 +91,39 @@ class QueueTwoStacks:
         return self.in_stack.size() + self.out_stack.size()
 
 
+def show_state(q):
+    print(f"  Stack1 (in):  {q.in_stack._items}")
+    print(f"  Stack2 (out): {q.out_stack._items}")
+    print()
+
+
 def test_exercise_1():
-    print("=== Exercise 1: Queue using two stacks ===")
     q = QueueTwoStacks()
+
     for x in [10, 20, 30]:
         q.enqueue(x)
-        print(f"enqueue({x})  size={q.size()}")
-    print("dequeue ->", q.dequeue())          # 10
-    print("dequeue ->", q.dequeue())          # 20
+        print(f"enqueue({x})")
+        show_state(q)
+
+    val = q.dequeue()
+    print(f"dequeue() -> {val}")
+    show_state(q)
+
+    val = q.dequeue()
+    print(f"dequeue() -> {val}")
+    show_state(q)
+
     q.enqueue(40)
     print("enqueue(40)")
-    print("front   ->", q.front())            # 30
-    print("dequeue ->", q.dequeue())          # 30
-    print("dequeue ->", q.dequeue())          # 40
-    print("is_empty ->", q.is_empty())        # True
-    try:
-        q.dequeue()
-    except IndexError as e:
-        print("dequeue on empty queue raises:", e)
-    print()
+    show_state(q)
+
+    val = q.dequeue()
+    print(f"dequeue() -> {val}")
+    show_state(q)
+
+    val = q.dequeue()
+    print(f"dequeue() -> {val}")
+    show_state(q)
 
 
 # ---------------------------------------------------------------
