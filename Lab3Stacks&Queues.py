@@ -196,7 +196,7 @@ def check_balanced(text):
 
 def test_exercise_3():
     print("=== Exercise 3: Balanced brackets ===")
-    cases = ["{,[,],}", "{,(,},)", "(,{,),},)"]
+    cases = ["}", "{,(,},)", "(,{,),},)"]
     for c in cases:
         ok, msg = check_balanced(c)
         print(f'Input: "{c}"')
