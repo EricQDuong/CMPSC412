@@ -29,3 +29,4 @@ Student_ID  first_name   last_name    email_id                major          GPA
 102348771   Liam         Evans        liam.evans@psu.edu      CMPAB_BS       3.8
 102348774   Lily         Reed         lily.reed@psu.edu       CMPAB_BS       3.6
 102348752   Isabella     Miller       isabella.miller@psu.edu CMPAB_BS       3.9
+111111111 Eric Duong exd5358@psu.edu CMPSC_BS 3.45
